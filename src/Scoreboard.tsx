@@ -9,7 +9,7 @@ export type ScoreboardProps = {
 
 export function Scoreboard({ visitor, clock, home }: ScoreboardProps) {
   return (
-    <div className="grid grid-cols-3">
+    <div className="grid grid-cols-3 select-none">
       <TeamScore {...visitor} />
       <Clock {...clock} />
       <TeamScore {...home} />

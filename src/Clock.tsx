@@ -54,7 +54,7 @@ export function Clock(props: ClockProps) {
         backgroundColor: "#000000",
         color: "#ffffff",
       }}
-      className="text-center select-none"
+      className="text-center"
       onClick={() => setRunning(!running)}
     >
       <span className="text-3xl font-bold me-4" style={{ fontFamily }}>

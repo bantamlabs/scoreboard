@@ -6,20 +6,29 @@ export type TeamScoreProps = {
   color: string;
   backgroundColor: string;
 };
-export function TeamScore({ teamName, color, backgroundColor }: TeamScoreProps) {
+export function TeamScore({
+  teamName,
+  color,
+  backgroundColor,
+}: TeamScoreProps) {
   const [score, setScore] = useState(0);
 
   return (
     <div
       style={{
         backgroundColor,
-        color
+        color,
       }}
     >
       <div className="flex flex-row pb-1 pl-2 text-3xl">
-        <div className="basis-3/4 font-bold">{teamName}</div>
         <div
-          className="basis-1/4 select-none text-center"
+          className="basis-3/4 font-bold"
+          onClick={() => setScore(score - 1)}
+        >
+          {teamName}
+        </div>
+        <div
+          className="basis-1/4 text-center"
           onClick={() => setScore(score + 1)}
         >
           {score}
