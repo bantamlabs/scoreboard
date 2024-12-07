@@ -1,25 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { Scoreboard } from './Scoreboard';
+
+const props = {
+  visitor: {
+    teamName: "Stoughton",
+    color: "#452272",
+    backgroundColor: "#7A7777",
+  },
+  home: {
+    teamName: "Navs",
+    color: "#1E2A48",
+    backgroundColor: "#F3C243",
+  },
+  clock: {
+    minutes: 17,
+    backgroundColor: "#ffffff",
+  },
+};
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Scoreboard {...props} />
   );
 }
 
