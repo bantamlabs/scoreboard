@@ -5,8 +5,6 @@ export type ClockProps = {
   backgroundColor: string;
 };
 export function Clock(props: ClockProps) {
-  const { backgroundColor } = props;
-
   const [minutes, setMinutes] = useState(props.minutes);
   const [seconds, setSeconds] = useState(0);
   const [period, setPeriod] = useState(1);
@@ -62,7 +60,12 @@ export function Clock(props: ClockProps) {
       <span className="text-3xl font-bold me-4" style={{ fontFamily }}>
         {minutes}:{seconds < 10 ? "0" + seconds : seconds}
       </span>
-      <span className="text-3xl">{periodDesc}</span>
+      <span
+        className="text-3xl"
+        onClick={() => setPeriod(period < 4 ? period + 1 : 1)}
+      >
+        {periodDesc}
+      </span>
     </div>
   );
 }
