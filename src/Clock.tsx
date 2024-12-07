@@ -31,6 +31,16 @@ export function Clock(props: ClockProps) {
     return () => clearInterval(interval);
   });
 
+  useEffect(() => {
+    function handleKeyDown(event: KeyboardEvent) {
+      if (event.key === " ") {
+        setRunning(!running);
+      }
+    }
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, [running]);
+
   let periodDesc: string;
   switch (period) {
     case 1:
