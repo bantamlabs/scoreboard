@@ -12,18 +12,13 @@ export function Clock(props: ClockProps) {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      if (!running) {
+      if (!running || (minutes === 0 && seconds === 0)) {
         return;
       }
 
       if (seconds === 0) {
-        if (minutes === 0) {
-          setRunning(false);
-          return;
-        } else {
-          setMinutes(minutes - 1);
-          setSeconds(59);
-        }
+        setMinutes(minutes - 1);
+        setSeconds(59);
       } else {
         setSeconds(seconds - 1);
       }
@@ -35,11 +30,27 @@ export function Clock(props: ClockProps) {
     function handleKeyDown(event: KeyboardEvent) {
       if (event.key === " ") {
         setRunning(!running);
+      } else if (event.key === "ArrowUp") {
+        setRunning(false);
+        if (seconds === 59) {
+          setMinutes(minutes + 1);
+          setSeconds(0);
+        } else {
+          setSeconds(seconds + 1);
+        }
+      } else if (event.key === "ArrowDown") {
+        setRunning(false);
+        if (seconds === 0) {
+          setMinutes(minutes - 1);
+          setSeconds(59);
+        } else {
+          setSeconds(seconds - 1);
+        }
       }
     }
     document.addEventListener("keydown", handleKeyDown);
     return () => document.removeEventListener("keydown", handleKeyDown);
-  }, [running]);
+  }, [running, seconds, minutes]);
 
   let periodDesc: string;
   switch (period) {
