@@ -3,12 +3,15 @@ import { useEffect, useState } from "react";
 export type ClockProps = {
   minutes: number;
   backgroundColor: string;
+  color: string;
 };
 export function Clock(props: ClockProps) {
   const [minutes, setMinutes] = useState(props.minutes);
   const [seconds, setSeconds] = useState(0);
   const [period, setPeriod] = useState(1);
   const [running, setRunning] = useState(false);
+
+  const { backgroundColor, color } = props;
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -52,6 +55,13 @@ export function Clock(props: ClockProps) {
     return () => document.removeEventListener("keydown", handleKeyDown);
   }, [running, seconds, minutes]);
 
+  function onPeriodClick() {
+    setRunning(false);
+    setPeriod(period < 4 ? period + 1 : 1)
+    setMinutes(props.minutes);
+    setSeconds(0);
+  }
+
   let periodDesc: string;
   switch (period) {
     case 1:
@@ -72,18 +82,17 @@ export function Clock(props: ClockProps) {
   return (
     <div
       style={{
-        backgroundColor: "#000000",
-        color: "#ffffff",
+        backgroundColor,
+        color
       }}
       className="text-center"
-      onClick={() => setRunning(!running)}
     >
       <span className="text-3xl font-bold me-4" style={{ fontFamily }}>
         {minutes}:{seconds < 10 ? "0" + seconds : seconds}
       </span>
       <span
         className="text-3xl"
-        onClick={() => setPeriod(period < 4 ? period + 1 : 1)}
+        onClick={onPeriodClick}
       >
         {periodDesc}
       </span>
