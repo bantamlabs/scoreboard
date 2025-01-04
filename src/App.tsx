@@ -3,14 +3,14 @@ import { Scoreboard } from './Scoreboard';
 
 const props = {
   visitor: {
-    teamName: "West Salem",
-    color: "#BA5822",
+    teamName: "Waupun",
+    color: "#E4B548",
     backgroundColor: "#000000",
   },
   home: {
     teamName: "Navs",
-    color: "#202d4d",
-    backgroundColor: "#EBB549",
+    color: "#1E2A48",
+    backgroundColor: "#EEB650",
   },
   clock: {
     minutes: 17,

@@ -85,17 +85,20 @@ export function Clock(props: ClockProps) {
         backgroundColor,
         color
       }}
-      className="text-center"
+      className="text-center h-full align-middle px-2 flex"
     >
-      <span className="text-3xl font-bold me-4" style={{ fontFamily }}>
-        {minutes}:{seconds < 10 ? "0" + seconds : seconds}
-      </span>
-      <span
-        className="text-3xl"
-        onClick={onPeriodClick}
-      >
-        {periodDesc}
-      </span>
+      <div className="m-auto">
+        <div
+          className="text-3xl align-center"
+          onClick={onPeriodClick}
+        >
+          {periodDesc}
+        </div>
+        <hr className="m-1" />
+        <div className="text-3xl font-bold align-center" style={{ fontFamily }}>
+          {minutes}:{seconds < 10 ? "0" + seconds : seconds}
+        </div>
+      </div>
     </div>
   );
 }

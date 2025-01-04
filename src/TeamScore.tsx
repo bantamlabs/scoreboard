@@ -19,19 +19,25 @@ export function TeamScore({
         backgroundColor,
         color,
       }}
+      className="h-1/2"
     >
-      <div className="flex flex-row pb-1 pl-2 text-3xl">
-        <div
-          className="basis-3/4 font-bold"
-          onClick={() => setScore(score - 1)}
-        >
-          {teamName}
-        </div>
-        <div
-          className="basis-1/4 text-center"
-          onClick={() => setScore(score + 1)}
-        >
-          {score}
+      <div className="h-full m-auto">
+        <div className="px-2 text-4xl font-bold open-sans">
+          <span
+            className="align-middle"
+          >
+            <span
+              onClick={() => setScore(score - 1)}
+            >
+              {teamName}
+            </span>
+            <span
+              className="float-right"
+              onClick={() => setScore(score + 1)}
+            >
+              {score}
+            </span>
+          </span>
         </div>
       </div>
     </div>

@@ -9,10 +9,14 @@ export type ScoreboardProps = {
 
 export function Scoreboard({ visitor, clock, home }: ScoreboardProps) {
   return (
-    <div className="grid grid-cols-3 select-none">
-      <TeamScore {...visitor} />
-      <Clock {...clock} />
-      <TeamScore {...home} />
+    <div style={{ width: "500px", height: "100px" }} className="flex">
+      <div className="h-full">
+        <Clock {...clock} />
+      </div>
+      <div className="h-full w-full">
+        <TeamScore {...visitor} />
+        <TeamScore {...home} />
+      </div>
     </div>
   );
 }
