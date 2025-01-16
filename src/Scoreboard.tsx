@@ -9,7 +9,7 @@ export type ScoreboardProps = {
 
 export function Scoreboard({ visitor, clock, home }: ScoreboardProps) {
   return (
-    <div style={{ width: "500px", height: "100px" }} className="flex">
+    <div style={{ width: "500px", height: "100px" }} className="flex select-none">
       <div className="h-full">
         <Clock {...clock} />
       </div>
