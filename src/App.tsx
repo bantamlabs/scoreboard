@@ -4,12 +4,12 @@ import { Scoreboard } from './Scoreboard';
 const props = {
   visitor: {
     teamName: "MG",
-    color: "#91B2D3",
-    backgroundColor: "#284185",
+    color: "#284185",
+    backgroundColor: "#80A7CA",
   },
   home: {
     teamName: "Navs JV",
-    color: "#1E2A48",
+    color: "#ffffff",
     backgroundColor: "#EEB650",
   },
   clock: {

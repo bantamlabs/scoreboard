@@ -85,7 +85,7 @@ export function Clock(props: ClockProps) {
         backgroundColor,
         color
       }}
-      className="text-center h-full align-middle px-2 flex"
+      className="text-center h-full align-middle px-2 flex opacity-90"
     >
       <div className="m-auto">
         <div
