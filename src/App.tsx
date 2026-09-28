@@ -3,17 +3,17 @@ import { Scoreboard } from './Scoreboard';
 
 const props = {
   visitor: {
-    teamName: "MG",
-    color: "#284185",
-    backgroundColor: "#80A7CA",
+    teamName: "Fond du Lac",
+    color: "#7B2D37",
+    backgroundColor: "grey",
   },
   home: {
-    teamName: "Navs JV",
+    teamName: "Navs",
     color: "#ffffff",
     backgroundColor: "#EEB650",
   },
   clock: {
-    minutes: 15,
+    minutes: 17,
     color: "#ffffff",
     backgroundColor: "#333333",
   },
